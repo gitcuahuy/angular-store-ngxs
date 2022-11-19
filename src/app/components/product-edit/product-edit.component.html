@@ -8,13 +8,13 @@
       id="name"
       aria-describedby="name"
       placeholder="Product name"
-      formControlName="name"
+      formControlName="title"
     />
   </div>
 
-  <button type="submit" class="btn btn-primary" [disabled]="!productForm.dirty">Submit</button>
+  <button type="submit" class="btn btn-primary" (click)="submit()" [disabled]="!productForm.dirty">Submit</button>
   <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
 </form>
 
-<p>{{ productForm.value | json }}</p>
-<p>{{ productForm.dirty }}</p>
+<p>value {{ productForm.value | json }}</p>
+<p>dirty {{ productForm.dirty }}</p>

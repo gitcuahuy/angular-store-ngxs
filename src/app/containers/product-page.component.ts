@@ -43,6 +43,8 @@ export class ProductPageComponent implements OnInit {
   }
 
   onSubmit(payload: Product) {
+    console.log('xxx', payload);
+
     if (payload.id === null) {
       this.store.dispatch(new CreateProduct(payload));
     } else {

@@ -27,6 +27,9 @@ export interface ProductsStateModel {
     selectedProduct: {
       id: 0,
       name: '',
+      completed: false,
+      title: '',
+      userId: 91,
     },
     message: 'No messages',
     productForm: {
@@ -124,7 +127,8 @@ export class ProductState {
   ) {
     const state = getState();
     patchState({ loading: true });
-    return this.apiService.createProduct(payload).pipe(
+    // payload.completed = !!payload?.completed ;
+    return this.apiService.createProduct({...payload, completed: !!payload.completed}).pipe(
       tap((result: Product) => {
         patchState({
           loading: false,

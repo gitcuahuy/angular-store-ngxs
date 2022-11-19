@@ -29,6 +29,8 @@ export class ProductEditComponent implements OnInit {
     this.productForm = this.fb.group({
       id: null,
       name: null,
+      title: null,
+      completed: false,
     });
   }
 

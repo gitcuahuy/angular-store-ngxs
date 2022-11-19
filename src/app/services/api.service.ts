@@ -8,7 +8,7 @@ import { Product } from '../models/product.model';
   providedIn: 'root',
 })
 export class ApiService {
-  private API_URL = 'http://localhost:3000/products/';
+  private API_URL = 'https://jsonplaceholder.typicode.com/todos/';
 
   constructor(private http: HttpClient) {}
 
